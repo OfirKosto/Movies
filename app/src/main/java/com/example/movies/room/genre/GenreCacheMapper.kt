@@ -1,12 +1,12 @@
-package com.example.movies.room
+package com.example.movies.room.genre
 
-import com.example.movies.interfaces.EntityMapper
+import com.example.movies.interfaces.IEntityMapper
 import com.example.movies.model.Genre
 import javax.inject.Inject
 
 class GenreCacheMapper
 @Inject
-constructor(): EntityMapper<GenreCacheEntity, Genre>{
+constructor(): IEntityMapper<GenreCacheEntity, Genre>{
     override fun mapFromEntity(entity: GenreCacheEntity): Genre {
         return Genre(
             id = entity.id,

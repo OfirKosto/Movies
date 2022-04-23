@@ -2,8 +2,11 @@ package com.example.movies.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.movies.interfaces.GenreDao
-import com.example.movies.room.GenreDatabase
+import com.example.movies.interfaces.IGenreDao
+import com.example.movies.interfaces.IMovieDao
+import com.example.movies.model.Movie
+import com.example.movies.room.genre.GenreDatabase
+import com.example.movies.room.movie.MovieDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,7 +20,7 @@ object RoomModule {
 
     @Singleton
     @Provides
-    fun provideGenreDb(@ApplicationContext context: Context): GenreDatabase{
+    fun provideGenreDb(@ApplicationContext context: Context): GenreDatabase {
         return Room.databaseBuilder(
             context,
             GenreDatabase::class.java,
@@ -29,7 +32,25 @@ object RoomModule {
 
     @Singleton
     @Provides
-    fun provideGenreDao(genreDatabase: GenreDatabase): GenreDao{
+    fun provideGenreDao(genreDatabase: GenreDatabase): IGenreDao{
         return genreDatabase.genreDao()
+    }
+
+    @Singleton
+    @Provides
+    fun provideMovieDb(@ApplicationContext context: Context): MovieDatabase {
+        return Room.databaseBuilder(
+            context,
+            MovieDatabase::class.java,
+            MovieDatabase.DATABASE_NAME
+        )
+            .fallbackToDestructiveMigration()
+            .build()
+    }
+
+    @Singleton
+    @Provides
+    fun provideMovieDao(movieDatabase: MovieDatabase): IMovieDao {
+        return movieDatabase.movieDao()
     }
 }

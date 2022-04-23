@@ -1,6 +1,6 @@
 package com.example.movies.interfaces
 
-import com.example.movies.retrofit.GenresNetworkEntity
+import com.example.movies.retrofit.genre.GenresNetworkEntity
 import retrofit2.http.GET
 import retrofit2.http.Query
 

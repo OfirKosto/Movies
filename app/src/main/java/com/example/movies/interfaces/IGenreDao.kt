@@ -4,10 +4,10 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.movies.room.GenreCacheEntity
+import com.example.movies.room.genre.GenreCacheEntity
 
 @Dao
-interface GenreDao {
+interface IGenreDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(genreEntity: GenreCacheEntity): Long

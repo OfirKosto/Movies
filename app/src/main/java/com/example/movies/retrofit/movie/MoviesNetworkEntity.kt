@@ -1,4 +1,4 @@
-package com.example.movies.retrofit
+package com.example.movies.retrofit.movie
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 data class MoviesNetworkEntity(
     @SerializedName("results")
     @Expose
-    var movies: List<MoviesNetworkEntity>
+    var movies: List<MovieNetworkEntity>
 
     ) {
 }

@@ -1,6 +1,6 @@
 package com.example.movies.interfaces
 
-interface EntityMapper<Entity, DomainModel> {
+interface IEntityMapper<Entity, DomainModel> {
 
     fun mapFromEntity(entity: Entity): DomainModel
 

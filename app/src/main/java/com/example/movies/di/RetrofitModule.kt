@@ -1,6 +1,7 @@
 package com.example.movies.di
 
 import com.example.movies.interfaces.IGenreApi
+import com.example.movies.interfaces.IMovieApi
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -37,6 +38,14 @@ object RetrofitModule {
         return retrofit
             .build()
             .create(IGenreApi::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideMovieService(retrofit: Retrofit.Builder): IMovieApi{
+        return retrofit
+            .build()
+            .create(IMovieApi::class.java)
     }
 
     @Singleton

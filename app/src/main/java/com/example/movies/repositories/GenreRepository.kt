@@ -1,17 +1,17 @@
 package com.example.movies.repositories
 
-import com.example.movies.interfaces.GenreDao
+import com.example.movies.interfaces.IGenreDao
 import com.example.movies.interfaces.IGenreApi
 import com.example.movies.model.Genre
-import com.example.movies.retrofit.GenreNetworkMapper
-import com.example.movies.room.GenreCacheMapper
+import com.example.movies.retrofit.genre.GenreNetworkMapper
+import com.example.movies.room.genre.GenreCacheMapper
 import com.example.movies.util.DataState
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.Flow
 
 class GenreRepository
 constructor(
-    private val genreDao: GenreDao,
+    private val genreDao: IGenreDao,
     private val genreService: IGenreApi,
     private val genreCacheMapper: GenreCacheMapper,
     private val genreNetworkMapper: GenreNetworkMapper,

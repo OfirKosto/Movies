@@ -1,12 +1,12 @@
-package com.example.movies.retrofit
+package com.example.movies.retrofit.genre
 
-import com.example.movies.interfaces.EntityMapper
+import com.example.movies.interfaces.IEntityMapper
 import com.example.movies.model.Genre
 import javax.inject.Inject
 
 class GenreNetworkMapper
 @Inject
-constructor(): EntityMapper<GenreNetworkEntity, Genre>{
+constructor(): IEntityMapper<GenreNetworkEntity, Genre>{
     override fun mapFromEntity(entity: GenreNetworkEntity): Genre {
         return Genre(
             id = entity.id,

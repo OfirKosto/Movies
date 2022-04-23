@@ -1,13 +1,13 @@
-package com.example.movies.room
+package com.example.movies.room.genre
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.movies.interfaces.GenreDao
+import com.example.movies.interfaces.IGenreDao
 
 @Database(entities = [GenreCacheEntity::class], version = 1)
 abstract class GenreDatabase: RoomDatabase() {
 
-    abstract fun genreDao(): GenreDao
+    abstract fun genreDao(): IGenreDao
 
     companion object{
         val DATABASE_NAME: String = "genre_db"
