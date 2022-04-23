@@ -17,7 +17,6 @@ data class MovieCacheEntity(
     @ColumnInfo(name = "release_date")
     var releaseDate: String,
 
-    @TypeConverters(GenresConverter::class)
     @ColumnInfo(name = "genres")
     var genres: MutableList<Int>?
 ) {

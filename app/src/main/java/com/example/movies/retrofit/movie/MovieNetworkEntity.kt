@@ -16,7 +16,7 @@ data class MovieNetworkEntity(
     @Expose
     var releaseDate: String,
 
-    @SerializedName("id")
+    @SerializedName("genre_ids")
     @Expose
     var genres: List<Int>
 
